@@ -1,0 +1,37 @@
+{
+	"name": "butterfly",
+	"version": "1.0.0",
+	"description": "",
+	"author": "",
+	"license": "ISC",
+	"engines": {
+		"node": "18.x"
+	},
+	"dependencies": {
+		"@middy/core": "^4.2.3",
+		"@middy/http-cors": "^4.2.3",
+		"@middy/http-error-handler": "^4.2.3",
+		"@middy/http-event-normalizer": "^4.2.3",
+		"@middy/http-json-body-parser": "^4.2.3",
+		"aws-sdk": "^2.1309.0",
+		"http-errors": "^2.0.0",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"@types/aws-lambda": "^8.10.110",
+		"@typescript-eslint/eslint-plugin": "^5.53.0",
+		"esbuild": "^0.16.17",
+		"eslint-config-prettier": "^8.6.0",
+		"prettier": "^2.8.4",
+		"serverless": "^3.29.0",
+		"serverless-dynamodb-local": "^0.2.40",
+		"serverless-esbuild": "^1.39.0",
+		"serverless-iam-roles-per-function": "^3.2.0",
+		"serverless-offline": "^12.0.4"
+	},
+	"overrides": {
+		"serverless-dynamodb-local": {
+			"dynamodb-localhost": "https://github.com/99x/dynamodb-localhost#db30898f8c40932c7177be7b2f1a81360d12876d"
+		}
+	}
+}

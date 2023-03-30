@@ -1,0 +1,13 @@
+{
+	"TableName": "CompaniesTable",
+	"Items": [
+		{
+			"id": {"S": "1"},
+			"name": {"S": "John Doe"}
+		},
+		{
+			"id": {"S": "2"},
+			"name": {"S": "Jane Smith"}
+		}
+	]
+}

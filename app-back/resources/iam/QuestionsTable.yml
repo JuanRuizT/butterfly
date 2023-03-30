@@ -1,0 +1,12 @@
+QuestionsTable:
+  Effect: Allow
+  Action:
+    - dynamodb:GetItem
+    - dynamodb:PutItem
+    - dynamodb:UpdateItem
+    - dynamodb:DeleteItem
+    - dynamodb:Query
+    - dynamodb:Scan
+  Resource:
+    - ${self:custom.QuestionsTable.arn}
+    - !Join ['/', ['${self:custom.QuestionsTable.arn}', 'index', 'companyId']]
