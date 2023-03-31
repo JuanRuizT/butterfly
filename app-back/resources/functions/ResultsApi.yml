@@ -1,0 +1,47 @@
+getResults:
+  handler: src/handlers/results/getResults.handler
+  events:
+    - http:
+        path: /results
+        method: get
+        cors: true
+
+getResult:
+  handler: src/handlers/results/getResult.handler
+  events:
+    - http:
+        path: /results/{id}
+        method: get
+        cors: true
+
+getResultsByQuestionId:
+  handler: src/handlers/results/getResultsByQuestionId.handler
+  events:
+    - http:
+        path: results/question/{id}
+        method: get
+        cors: true
+
+postResult:
+  handler: src/handlers/results/createResult.handler
+  events:
+    - http:
+        path: /results
+        method: post
+        cors: true
+
+updateResult:
+  handler: src/handlers/results/updateResult.handler
+  events:
+    - http:
+        path: /results/{id}
+        method: put
+        cors: true
+
+deleteResult:
+  handler: src/handlers/results/deleteResult.handler
+  events:
+    - http:
+        path: /results/{id}
+        method: delete
+        cors: true

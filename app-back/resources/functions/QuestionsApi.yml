@@ -1,0 +1,47 @@
+getQuestions:
+  handler: src/handlers/questions/getQuestions.handler
+  events:
+    - http:
+        path: /questions
+        method: get
+        cors: true
+
+getQuestion:
+  handler: src/handlers/questions/getQuestion.handler
+  events:
+    - http:
+        path: /questions/{id}
+        method: get
+        cors: true
+
+getQuestionsByCompanyId:
+  handler: src/handlers/questions/getQuestionsByCompanyId.handler
+  events:
+    - http:
+        path: questions/company/{id}
+        method: get
+        cors: true
+
+postQuestion:
+  handler: src/handlers/questions/createQuestion.handler
+  events:
+    - http:
+        path: /questions
+        method: post
+        cors: true
+
+updateQuestion:
+  handler: src/handlers/questions/updateQuestion.handler
+  events:
+    - http:
+        path: /questions/{id}
+        method: put
+        cors: true
+
+deleteQuestion:
+  handler: src/handlers/questions/deleteQuestion.handler
+  events:
+    - http:
+        path: /questions/{id}
+        method: delete
+        cors: true

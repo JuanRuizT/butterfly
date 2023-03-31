@@ -15,13 +15,18 @@ provider:
   name: aws
   runtime: nodejs16.x
   memorySize: 256
-  stage: ${opt:stage, "dev"}
+  stage: ${opt:stage, "local"} #local or dev (AWS)
   region: 'us-east-2'
 
   environment:
+    ENV: ${self:provider.stage}
     COMPANIES_TABLE_NAME: ${self:custom.CompaniesTable.name}
     QUESTIONS_TABLE_NAME: ${self:custom.QuestionsTable.name}
     RESULTS_TABLE_NAME: ${self:custom.ResultsTable.name}
+    COMPANIES_TABLE_NAME_LOCAL: Companies-local
+    QUESTIONS_TABLE_NAME_LOCAL: Questions-local
+    RESULTS_TABLE_NAME_LOCAL: Results-local
+
   iam:
     role:
       statements:
@@ -31,6 +36,11 @@ provider:
 
 resources:
   - ${file(resources/database/Model.yml)}
+
+functions:
+  - ${file(resources/functions/CompaniesApi.yml)}
+  - ${file(resources/functions/QuestionsApi.yml)}
+  - ${file(resources/functions/ResultsApi.yml)}
 
 custom:
   CompaniesTable:
@@ -42,6 +52,8 @@ custom:
   ResultsTable:
     name: !Ref ResultsTable
     arn: !GetAtt ResultsTable.Arn
+  serverless-offline:
+    httpPort: 8080
 
   dynamodb:
     start:
