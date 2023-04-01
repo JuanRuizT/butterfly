@@ -8,7 +8,7 @@ type Props = SVGProps<SVGSVGElement> & {
   fillOpacity?: string;
 };
 
-const Edit: React.FC<Props> = ({ color = '#000000', width = 36, height = 37, fillOpacity = '1', ...props }: Props) => {
+const Edit: React.FC<Props> = ({ color = '#000000', width = 12, height = 12, fillOpacity = '1', ...props }: Props) => {
   return (
     <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>{'EditIcon'}</title>

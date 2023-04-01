@@ -1,0 +1,52 @@
+.anythingCardWrapper {
+	display: flex;
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		background-color: #1b828e;
+		width: 540px;
+		padding: 0px 30px 30px 30px;
+		border-radius: 10px;
+		margin-top: 15px;
+
+		.title {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 24px;
+			margin-bottom: 20px;
+
+			.question {
+				color: white;
+				font-size: 24px;
+				font-weight: 700;
+				padding-top: 10px;
+			}
+
+			.extra {
+				display: flex;
+				box-sizing: border-box;
+				height: 89px;
+				width: 89px;
+				align-items: center;
+				background: #0d4d54;
+				border-radius: 50%;
+				text-align: center;
+				color: #fff;
+				font-size: 12px;
+				font-weight: 700;
+				word-spacing: 8.9rem;
+			}
+		}
+
+		.comment {
+			margin-top: 20px;
+			color: #2ce6ce;
+			font-size: 16px;
+			font-weight: 700;
+			text-decoration: underline;
+			align-self: center;
+			cursor: pointer;
+		}
+	}
+}

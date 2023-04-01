@@ -5,7 +5,7 @@ import {getCompany} from '../../services/companyService';
 import {createQuestion} from '../../services/questionService';
 
 const response = async (event) => {
-	const {companyId, title, content} = event.body;
+	const {companyId, title, content, commentPlaceHolder} = event.body;
 
 	await getCompany(companyId);
 
@@ -13,7 +13,8 @@ const response = async (event) => {
 		id: uuid(),
 		companyId,
 		title,
-		content
+		content,
+		commentPlaceHolder
 	};
 
 	console.log(question);

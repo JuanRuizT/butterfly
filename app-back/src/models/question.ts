@@ -3,4 +3,5 @@ export interface Question {
 	companyId: string;
 	title: string;
 	content: string;
+	commentPlaceHolder: string;
 }

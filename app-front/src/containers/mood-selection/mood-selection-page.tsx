@@ -5,7 +5,7 @@ import MoodSelector from './components/mood-selector/mood-selector';
 import Footer from './components/footer/footer';
 
 const MoodSelection: React.FC = () => (
-  <div className="warper">
+  <div className="warperMood">
     <div className="content">
       <Header />
       <MoodSelector />

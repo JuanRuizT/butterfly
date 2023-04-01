@@ -3,14 +3,15 @@ import {Question} from '../../models';
 import {updateQuestion} from '../../services/questionService';
 
 const response = async (event) => {
-	const {companyId, title, content} = event.body;
+	const {companyId, title, content, commentPlaceHolder} = event.body;
 	const {id} = event.pathParameters;
 
 	const question: Question = {
 		id,
 		companyId,
 		title,
-		content
+		content,
+		commentPlaceHolder
 	};
 
 	const updatedQuestion = await updateQuestion(id, question);

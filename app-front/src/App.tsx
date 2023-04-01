@@ -10,7 +10,7 @@ const App = () => {
       <div className="container main">
         <Routes>
           <Route path="/" element={<MoodSelection />} />
-          <Route path="/questions" element={<Questions />} />
+          <Route path="/questions/:id" element={<Questions />} />
           <Route path="/thanks" element={<Thanks />} />
           <Route path="*" element={<div>The pages does not exist</div>} />
         </Routes>

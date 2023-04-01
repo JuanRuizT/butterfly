@@ -1,61 +1,59 @@
 import React from 'react';
-import './mood-selector-styles.scss';
+import './mood-card-styles.scss';
 import { HappyIcon, NeutralIcon, UnhappyIcon, VeryHappyIcon, VeryUnhappyIcon } from '../../../../components/icons';
-import { useNavigate } from 'react-router-dom';
 
-const MoodSelector: React.FC = () => {
-  const navigate = useNavigate();
+interface Props {
+  setMood: (mood: string) => void;
+}
+
+const MoodsCard: React.FC<Props> = ({ setMood }) => {
   const handleOnClick = (selection: string): void => {
     console.log(selection);
-    navigate('questions/' + selection);
+    setMood(selection);
   };
 
   return (
-    <div className="moodSelectorwrapper">
-      <div className="title">
-        <span className="companyName">DEMO INC. </span>would like to know
-      </div>
-      <div className="question">{'How is your week going?'}</div>
+    <div className="moodCardwrapper">
+      <div className="question">Did you make a mistake? Please select your correct mood:</div>
       <div className="moods">
         <div
           onClick={() => {
             handleOnClick('5');
           }}
         >
-          <VeryUnhappyIcon width={82} height={82} />
+          <VeryUnhappyIcon width={64} height={64} />
         </div>
         <div
           onClick={() => {
             handleOnClick('4');
           }}
         >
-          <UnhappyIcon width={82} height={82} />
+          <UnhappyIcon width={64} height={64} />
         </div>
         <div
           onClick={() => {
             handleOnClick('3');
           }}
         >
-          <NeutralIcon width={82} height={82} />
+          <NeutralIcon width={64} height={64} />
         </div>
         <div
           onClick={() => {
             handleOnClick('2');
           }}
         >
-          <HappyIcon width={82} height={82} />
+          <HappyIcon width={64} height={64} />
         </div>
         <div
           onClick={() => {
             handleOnClick('1');
           }}
         >
-          <VeryHappyIcon width={82} height={82} />
+          <VeryHappyIcon width={64} height={64} />
         </div>
       </div>
-      <div className="anonymous">{'Your answer will always remain anonymous'}</div>
     </div>
   );
 };
 
-export default MoodSelector;
+export default MoodsCard;

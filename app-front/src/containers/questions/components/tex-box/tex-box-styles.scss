@@ -1,0 +1,26 @@
+.box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid #dedede;
+	background-color: white;
+	border-radius: 3px;
+	padding: 20px 40px 30px 20px;
+	margin-top: 20px;
+
+	textarea {
+		width: 100%;
+		resize: none;
+		border: 1px solid white;
+		padding: 5px;
+		font-size: 18px;
+		font-family: inherit;
+		outline: none;
+		color: #474747;
+
+		&::placeholder {
+			font-size: 18px;
+		}
+	}
+}

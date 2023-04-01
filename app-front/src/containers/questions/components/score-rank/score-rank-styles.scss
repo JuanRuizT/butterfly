@@ -1,0 +1,62 @@
+// src/components/Rating.scss
+
+.rating {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f7f7f7;
+	border: 3px solid #ededed;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
+
+	.star {
+		cursor: pointer;
+		flex: 1;
+		transition: transform 200ms ease-in;
+		text-align: center;
+		padding: 5px;
+
+		.starIcon:hover {
+			transform: scale(1.2);
+		}
+
+		&.selected {
+			&.veryUnhappy {
+				background-color: #F45D6F;
+				transition: background-color 0.5s;
+			}
+
+			&.unhappy {
+				background-color: #F98371;
+				transition: background-color 0.5s;
+			}
+
+			&.neutral {
+				background-color: #FFAC73;
+				transition: background-color 0.5s;
+			}
+
+			&.happy {
+				background-color: #AEEB7E;
+				transition: background-color 0.5s;
+			}
+
+			&.veryHappy {
+				background-color: #34EB7E;
+				transition: background-color 0.5s;
+			}
+
+			&:nth-child(1) {
+				border-top-left-radius: 25px;
+				border-bottom-left-radius: 25px;
+			}
+
+			&:nth-child(10) {
+				border-top-right-radius: 25px;
+				border-bottom-right-radius: 25px;
+			}
+		}
+	}
+}
