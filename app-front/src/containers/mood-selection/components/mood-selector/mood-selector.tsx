@@ -9,7 +9,6 @@ const MoodSelector: React.FC = () => {
   const navigate = useNavigate();
   const { data: companies = [] }: { data?: Company[] } = useGetCompaniesQuery();
   const handleOnClick = (selection: string): void => {
-    console.log(selection);
     navigate('questions/' + selection);
   };
 

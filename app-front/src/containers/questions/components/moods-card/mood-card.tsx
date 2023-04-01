@@ -8,7 +8,6 @@ interface Props {
 
 const MoodsCard: React.FC<Props> = ({ setMood }) => {
   const handleOnClick = (selection: string): void => {
-    console.log(selection);
     setMood(selection);
   };
 
