@@ -2,19 +2,31 @@ import React, { useState } from 'react';
 import './question-card-styles.scss';
 import ScoreRank from '../score-rank/score-rank';
 import Box from '../tex-box/tex-box';
+import { Result } from '../../../../types';
 
 interface Props {
   num: number;
   totalQuestions: number;
   title: string;
-  question: string;
+  questionId: string;
+  questionContent: string;
   placeholder: string;
 }
 
-const QuestionCard: React.FC<Props> = ({ num, totalQuestions, title, question, placeholder }) => {
+const QuestionCard: React.FC<Props> = ({ num, totalQuestions, title, questionId, questionContent, placeholder }) => {
   const [addComment, setAddComment] = useState<boolean>(false);
+  const [result, setResult] = useState<Result | null>({
+    questionId,
+    comment: '',
+    score: 0
+  });
+
   const handleRankingChange = (ranking: number) => {
-    console.log(`Ranking changed to ${ranking}`);
+    setResult({ ...result, score: ranking });
+  };
+
+  const handleCommentChange = (comment: string) => {
+    setResult({ ...result, comment });
   };
 
   const onAddCommentClick = () => {
@@ -26,7 +38,7 @@ const QuestionCard: React.FC<Props> = ({ num, totalQuestions, title, question, p
       <div className="card">
         <div className="number">{`${num} of ${totalQuestions}`}</div>
         <div className="title">{title}</div>
-        <div className="question">{question}</div>
+        <div className="question">{questionContent}</div>
         <div className="score">
           <ScoreRank onRatingChange={handleRankingChange} />
         </div>
@@ -39,7 +51,7 @@ const QuestionCard: React.FC<Props> = ({ num, totalQuestions, title, question, p
             Add comment
           </div>
         ) : (
-          <Box label={placeholder} />
+          <Box label={placeholder} handleCommentChange={handleCommentChange} />
         )}
       </div>
     </div>

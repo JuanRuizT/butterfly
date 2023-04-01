@@ -22,7 +22,8 @@ const Questions: React.FC = () => {
           num={index}
           totalQuestions={questions.length}
           title={question.title}
-          question={question.content}
+          questionId={question.id}
+          questionContent={question.content}
           placeholder={question.commentPlaceHolder}
         />
       );

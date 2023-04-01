@@ -29,6 +29,13 @@
 		border: 1px solid #2ce6ce;
 		text-decoration: none;
 		justify-content: center;
+
+		&[disabled] {
+			cursor: not-allowed;
+			background-color: #dedede;
+			border: 1px solid #dedede;
+			color: gray
+		}
 	}
 
 	.copyright {
