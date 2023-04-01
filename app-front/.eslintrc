@@ -33,6 +33,7 @@
 	},
 	"rules": {
 	  "import/no-duplicates":"off",
+	  "@typescript-eslint/consistent-type-imports":"off",
 	  "@typescript-eslint/explicit-function-return-type":"off",
 	  "@typescript-eslint/no-duplicate-imports":"off",
 	  "@typescript-eslint/consistent-type-definitions": "off",
