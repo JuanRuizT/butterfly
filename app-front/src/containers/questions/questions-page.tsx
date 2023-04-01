@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './questions-styles.scss';
 import QuestionHeader from './components/header/question-header';
 import QuestionCard from './components/question-card/question-card';
@@ -10,25 +10,33 @@ import Sidebar from '../../components/sidebar/sidebar';
 import { useGetQuestionsQuery } from '../../store/api/questionsApi';
 
 const Questions: React.FC = () => {
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const navigate = useNavigate();
-
   const { data: questions = [] }: { data?: Question[] } = useGetQuestionsQuery();
+  const [responses, setResponses] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (responses.length === questions.length) {
+      setIsButtonEnabled(true);
+    }
+  }, [responses]);
 
   const renderQuestions = () => {
     const questionCards = questions.map((question, index) => {
       return (
         <QuestionCard
           key={index}
-          num={index}
+          num={index + 1}
           totalQuestions={questions.length}
           title={question.title}
           questionId={question.id}
           questionContent={question.content}
           placeholder={question.commentPlaceHolder}
+          setResponses={setResponses}
         />
       );
     });
-    return questionCards.sort(() => Math.random() - 0.5);
+    return questionCards;
   };
 
   return (
@@ -43,6 +51,7 @@ const Questions: React.FC = () => {
           navigate('/thanks');
         }}
         className="sendButton"
+        disabled={!isButtonEnabled}
       >
         {'Send'}
       </button>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import './question-card-styles.scss';
 import ScoreRank from '../score-rank/score-rank';
 import Box from '../tex-box/tex-box';
@@ -11,18 +11,34 @@ interface Props {
   questionId: string;
   questionContent: string;
   placeholder: string;
+  setResponses: Dispatch<SetStateAction<string[]>>;
 }
 
-const QuestionCard: React.FC<Props> = ({ num, totalQuestions, title, questionId, questionContent, placeholder }) => {
+const QuestionCard: React.FC<Props> = ({
+  num,
+  totalQuestions,
+  title,
+  questionId,
+  questionContent,
+  placeholder,
+  setResponses
+}) => {
   const [addComment, setAddComment] = useState<boolean>(false);
-  const [result, setResult] = useState<Result | null>({
+  const [result, setResult] = useState<Result>({
     questionId,
     comment: '',
     score: 0
   });
 
   const handleRankingChange = (ranking: number) => {
-    setResult({ ...result, score: ranking });
+    setResponses(prevItems => {
+      const resultExist = prevItems.some(result => result === questionId);
+      let newItems = prevItems;
+      if (!resultExist) {
+        newItems = [...prevItems, questionId];
+      }
+      return newItems;
+    });
   };
 
   const handleCommentChange = (comment: string) => {

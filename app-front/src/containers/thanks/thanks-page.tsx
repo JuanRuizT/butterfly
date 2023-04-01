@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './thanks-styles.scss';
 import Footer from '../../components/footer/footer';
 import Sidebar from '../../components/sidebar/sidebar';

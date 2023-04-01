@@ -31,10 +31,13 @@ const resultSlice = createSlice({
       if (index !== -1) {
         state.results.splice(index, 1);
       }
+    },
+    clearResults: state => {
+      state.results = initialState.results;
     }
   }
 });
 
-export const { getResults, addResult, updateResult, deleteResult } = resultSlice.actions;
+export const { getResults, addResult, updateResult, deleteResult, clearResults } = resultSlice.actions;
 
 export default resultSlice.reducer;
