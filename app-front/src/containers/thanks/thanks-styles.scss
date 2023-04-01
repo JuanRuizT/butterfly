@@ -1,5 +1,41 @@
-.warp {
-	.red {
-		background-color: red;
+.thanksWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	background-color: #166e78;
+	background-image: linear-gradient(180deg, rgba(13, 77, 84, 0), #0d4d54 77%);
+	margin-left: 36px;
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		width: 420px;
+		border-radius: 3px;
+		margin-top: 24px;
+		padding: 40px;
+		margin-left: 48px;
+
+
+		.thanksMessage {
+			margin: 20px 0 0 0;
+			font-weight: 700;
+			font-size: 18px;
+			text-transform: uppercase;
+			color: #2ce6ce;
+			margin-bottom: 10px;
+		}
+
+		.message {
+			box-sizing: border-box;
+			font-size: 14px;
+			color: #4a4a4a;
+			margin-top: 1px;
+		}
+	}
+
+	.thanksFooter {
+		margin-left: 36px;
 	}
 }

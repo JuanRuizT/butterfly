@@ -1,11 +1,12 @@
 import React from 'react';
 import './questions-styles.scss';
 import QuestionHeader from './components/header/question-header';
-import { ButterflyIcon } from '../../components/icons';
 import QuestionCard from './components/question-card/question-card';
 import { Question } from '../../types/question';
 import AnythingCard from './components/anything-card/anything-card';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/footer/footer';
+import Sidebar from '../../components/sidebar/sidebar';
 
 const questions: Question[] = [
   {
@@ -53,11 +54,7 @@ const Questions: React.FC = () => {
 
   return (
     <div className="questionsWrapper">
-      <div className="sidebar">
-        <div className="icon">
-          <ButterflyIcon width={18} height={18} />
-        </div>
-      </div>
+      <Sidebar />
       <QuestionHeader />
       <div className="text">Do you agree with the following statements:</div>
       {renderQuestions()}
@@ -71,9 +68,7 @@ const Questions: React.FC = () => {
         {'Send'}
       </button>
       <div className="copyright">
-        <div>Butterfly.</div>
-        <div className="link">{'Support | Terms of Service | Privacy Policy'}</div>
-        <div>©2023 Appynest, Inc.</div>
+        <Footer />
       </div>
     </div>
   );

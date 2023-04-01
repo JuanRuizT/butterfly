@@ -1,0 +1,15 @@
+.generalFooter {
+	.copyright {
+		display: flex;
+		flex-direction: column;
+		padding: 30px 20px 40px 0px;
+		gap: 15px;
+		font-size: 14px;
+		font-weight: 400;
+		color: white;
+
+		.link {
+			color: #2ce6ce
+		}
+	}
+}

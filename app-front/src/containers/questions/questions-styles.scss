@@ -3,24 +3,9 @@
 	flex-direction: column;
 	height: 100%;
 	background-color: #166e78;
+	background-image: linear-gradient(180deg, rgba(13, 77, 84, 0), #0d4d54 77%);
 	margin-left: 36px;
 	padding: 24px 20px 10px 48px;
-
-	.sidebar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 36px;
-		height: 100%;
-		background-color: #0d4d54;
-
-		.icon {
-			background-color: #2ce6ce;
-			margin: 6px;
-			padding: 2px 0px 0px 3px;
-			border-radius: 3px;
-		}
-	}
 
 	.text {
 		color: white;
@@ -47,17 +32,6 @@
 	}
 
 	.copyright {
-		display: flex;
-		flex-direction: column;
-		padding: 30px 20px 40px 0px;
-		gap: 15px;
 		margin-top: 32px;
-		font-size: 14px;
-		font-weight: 400;
-		color: white;
-
-		.link {
-			color: #2ce6ce
-		}
 	}
 }
