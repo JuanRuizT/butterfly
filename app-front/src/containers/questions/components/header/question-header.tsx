@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import './question-header-styles.scss';
 import { EditIcon, HappyIcon, NeutralIcon, UnhappyIcon, VeryHappyIcon, VeryUnhappyIcon } from '../../../../components/icons';
 import MoodsCard from '../moods-card/mood-card';
+import { useGetCompaniesQuery } from '../../../../store/api/companiesApi';
+import { Company } from '../../../../types';
 
 const QuestionHeader: React.FC = () => {
   const [selectedMood, setSelectedMood] = useState('1');
+  const { data: companies = [] }: { data?: Company[] } = useGetCompaniesQuery();
 
   const [isMoodSelectorOpen, setIsMoodSelectorOpen] = useState<boolean>(false);
 
@@ -72,7 +75,7 @@ const QuestionHeader: React.FC = () => {
         ) : (
           <MoodsCard setMood={setMood} />
         )}
-        <div className="company">Demo Inc.</div>
+        <div className="company">{companies[0]?.name ?? 'Demo Inc.'}</div>
       </div>
     </>
   );

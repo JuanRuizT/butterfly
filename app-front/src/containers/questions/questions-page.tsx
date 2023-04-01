@@ -7,34 +7,12 @@ import AnythingCard from './components/anything-card/anything-card';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/footer/footer';
 import Sidebar from '../../components/sidebar/sidebar';
-
-const questions: Question[] = [
-  {
-    id: 'q1',
-    companyId: 'c1',
-    title: '¿Cómo puedo hacer una lista de objetos JSON?',
-    content: 'Quiero crear una lista de objetos JSON en JavaScript. ¿Cómo puedo hacerlo?',
-    commentPlaceHolder: 'Escribe tu comentario aquí...'
-  },
-  {
-    id: 'q2',
-    companyId: 'c2',
-    title: '¿Cuál es la diferencia entre TypeScript y JavaScript?',
-    content:
-      'He oído hablar de TypeScript, pero no entiendo bien cuál es la diferencia con JavaScript. ¿Alguien puede explicármelo?',
-    commentPlaceHolder: 'Deja tu comentario aquí...'
-  },
-  {
-    id: 'q3',
-    companyId: 'c1',
-    title: '¿Cómo puedo hacer una animación con CSS?',
-    content: 'Quiero hacer una animación con CSS, pero no sé por dónde empezar. ¿Alguien me puede dar algunas indicaciones?',
-    commentPlaceHolder: 'Comenta aquí...'
-  }
-];
+import { useGetQuestionsQuery } from '../../store/api/questionsApi';
 
 const Questions: React.FC = () => {
   const navigate = useNavigate();
+
+  const { data: questions = [] }: { data?: Question[] } = useGetQuestionsQuery();
 
   const renderQuestions = () => {
     const questionCards = questions.map((question, index) => {
@@ -49,7 +27,7 @@ const Questions: React.FC = () => {
         />
       );
     });
-    return questionCards;
+    return questionCards.sort(() => Math.random() - 0.5);
   };
 
   return (

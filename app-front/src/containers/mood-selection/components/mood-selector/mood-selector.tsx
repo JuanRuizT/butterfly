@@ -2,9 +2,12 @@ import React from 'react';
 import './mood-selector-styles.scss';
 import { HappyIcon, NeutralIcon, UnhappyIcon, VeryHappyIcon, VeryUnhappyIcon } from '../../../../components/icons';
 import { useNavigate } from 'react-router-dom';
+import { Company } from '../../../../types';
+import { useGetCompaniesQuery } from '../../../../store/api/companiesApi';
 
 const MoodSelector: React.FC = () => {
   const navigate = useNavigate();
+  const { data: companies = [] }: { data?: Company[] } = useGetCompaniesQuery();
   const handleOnClick = (selection: string): void => {
     console.log(selection);
     navigate('questions/' + selection);
@@ -13,7 +16,7 @@ const MoodSelector: React.FC = () => {
   return (
     <div className="moodSelectorwrapper">
       <div className="title">
-        <span className="companyName">DEMO INC. </span>would like to know
+        <span className="companyName">{companies[0]?.name ?? 'Demo Inc.'} </span>would like to know
       </div>
       <div className="question">{'How is your week going?'}</div>
       <div className="moods">
