@@ -5,6 +5,7 @@ import {getQuestions} from '../../services/questionService';
 
 const response: APIGatewayProxyHandler = async () => {
 	const questions: Question[] = await getQuestions();
+	questions.sort(() => Math.random() - 0.5);
 
 	return {
 		statusCode: 200,
