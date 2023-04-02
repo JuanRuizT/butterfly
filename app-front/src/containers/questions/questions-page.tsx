@@ -16,7 +16,7 @@ const Questions: React.FC = () => {
   const [responses, setResponses] = useState<string[]>([]);
 
   useEffect(() => {
-    if (responses.length === questions.length) {
+    if (questions.length !== 0 && responses.length === questions.length) {
       setIsButtonEnabled(true);
     }
   }, [responses]);
