@@ -1,0 +1,37 @@
+[
+	{
+		"content": "I like my work environment, and I believe it helps me perform at my best.",
+		"commentPlaceHolder": "Anything to add for Workplace?",
+		"companyId": "a6c180fd-f319-4211-b2bb-8e401dad7f14",
+		"id": "40c7ecbe-a032-45f8-b802-d0dbaae70b33",
+		"title": "Workplace"
+	},
+	{
+		"content": "I am satisfied with my roles and responsibilities.",
+		"commentPlaceHolder": "Anything to add for Roles and Responsibilities?",
+		"companyId": "a6c180fd-f319-4211-b2bb-8e401dad7f14",
+		"id": "786c7009-7675-46ac-afee-ee23b3a08ace",
+		"title": "Roles and Responsibilities"
+	},
+	{
+		"content": "I feel comfortable working and interacting with the colleagues on my team.",
+		"commentPlaceHolder": "Anything to add for Teamwork?",
+		"companyId": "a6c180fd-f319-4211-b2bb-8e401dad7f14",
+		"id": "caa16893-8c6b-4d2a-bc8f-2b1d1a50c8f3",
+		"title": "Teamwork"
+	},
+	{
+		"content": "My direct manager gives me necessary support and clear objectives.",
+		"commentPlaceHolder": "Anything to add for Management?",
+		"companyId": "a6c180fd-f319-4211-b2bb-8e401dad7f14",
+		"id": "77852af4-3dc0-4ecd-9126-32b06117b398",
+		"title": "Management"
+	},
+	{
+		"content": "I feel like I have a healthy work/life balance.",
+		"commentPlaceHolder": "Anything to add for Work/Life Balance?",
+		"companyId": "a6c180fd-f319-4211-b2bb-8e401dad7f14",
+		"id": "fe7eac9b-5b11-4501-9586-c12f1e516ecb",
+		"title": "Work/Life Balance"
+	}
+]

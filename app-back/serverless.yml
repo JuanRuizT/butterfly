@@ -15,7 +15,7 @@ provider:
   name: aws
   runtime: nodejs16.x
   memorySize: 256
-  stage: ${opt:stage, "dev"} #local or dev (AWS)
+  stage: ${opt:stage, "local"} #local or dev (AWS)
   region: 'us-east-2'
 
   environment:
@@ -56,11 +56,16 @@ custom:
     httpPort: 8080
 
   dynamodb:
+    stages:
+      - ${self:provider.stage}
     start:
       port: 8000
       inMemory: true
       migrate: true
-      seed: true
-      seedPath: /seeds/db-seed.json
-    stages:
-      - ${self:provider.stage}
+    seed:
+      seeds:
+        sources:
+          - table: ${self:provider.environment.COMPANIES_TABLE_NAME_LOCAL}
+            sources: [seeds/companies-seed.json]
+          - table: ${self:provider.environment.QUESTIONS_TABLE_NAME_LOCAL}
+            sources: [seeds/questions-seed.json]
